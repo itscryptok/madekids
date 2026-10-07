@@ -30,7 +30,7 @@ export default function RecordingPage({ type }: { type: RecordingType }) {
 
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const chunksRef = useRef<Blob[]>([]);
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const startTimeRef = useRef<number>(0);
 
   const isSubscribed = (user as any)?.subscriptionStatus === "active";

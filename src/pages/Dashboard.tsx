@@ -160,7 +160,7 @@ export default function Dashboard() {
             <h2 className="font-black text-foreground text-lg mb-5">Today's Modules</h2>
             <div className="space-y-3">
               {modules.map((mod) => {
-                const done = completedToday.includes(mod);
+                const done = (completedToday as string[]).includes(mod);
                 return (
                   <Link key={mod} href={moduleLinks[mod]}>
                     <div className={`flex items-center gap-4 p-4 rounded-2xl border-2 cursor-pointer transition-all hover:scale-[1.01] ${done ? "border-primary/30 bg-primary/5" : "border-border hover:border-primary/40"}`}>

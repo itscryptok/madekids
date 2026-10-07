@@ -7,8 +7,8 @@ import Layout from "@/components/Layout";
 
 export default function AccountPage() {
   const { user } = useAuth();
-  const { data: subscription } = useGetMySubscription({ query: { retry: false } });
-  const { data: children, refetch } = useGetChildren(user?.id ?? 0, { query: { enabled: !!user?.id } });
+  const { data: subscription } = useGetMySubscription({ query: { retry: false } as any });
+  const { data: children, refetch } = useGetChildren(user?.id ?? 0, { query: { enabled: !!user?.id } as any });
   const { mutate: addChild, isPending: addingChild } = useAddChild({
     mutation: { onSuccess: () => { refetch(); setShowAddChild(false); setChildName(""); setChildAge(""); } }
   });

@@ -37,6 +37,7 @@ export default function Addy() {
 
   const addyToken = () => sessionStorage.getItem("addy_token") || "";
   const headers = { "Content-Type": "application/json", Authorization: `Bearer ${addyToken()}` };
+  const apiFetch = (path: string, init?: RequestInit) => fetch(api(path), { ...init, headers });
 
   async function handleLogin(e: React.FormEvent) {
     e.preventDefault();
@@ -209,7 +210,7 @@ export default function Addy() {
             <span className="text-white font-black">Admin Panel</span>
             <span className="bg-primary/20 text-primary text-xs font-bold px-2 py-0.5 rounded-full">ADDY</span>
           </div>
-          <div className="text-white/50 text-sm">{user.name}</div>
+          <div className="text-white/50 text-sm">Admin</div>
         </div>
       </header>
 

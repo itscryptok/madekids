@@ -185,14 +185,14 @@ function AppRoutes() {
       <Route path="/join" component={Join} />
       <Route path="/coaches" component={CoachListing} />
       <Route path="/coaches/:slug">
-        {(params) => <CoachProfile slug={params.slug} />}
+        {(params: any) => <CoachProfile slug={params.slug} />}
       </Route>
       <Route path="/coach/signup" component={CoachSignup} />
       <Route path="/coach/register">
         {() => <ProtectedRoute component={CoachRegister} />}
       </Route>
       <Route path="/coach/:slug">
-        {(params) => <ProtectedRoute component={CoachDashboard} slug={params.slug} />}
+        {(params: any) => <ProtectedRoute component={CoachDashboard} slug={params.slug} />}
       </Route>
       <Route path="/how-it-works" component={HowItWorks} />
       <Route path="/reviews" component={ReviewsPage} />
